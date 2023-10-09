@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family:Cambria Math, sans-serif;
+            text-align: center;
+        }
+        #container {
+            margin: 50px auto;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+          
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 24px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body bgcolor='#FFDACC'>
+    <div id="container">
+        <h1><b>Temperature Converter from °C to °F </b></h1><br>
+        <input type="text" id="celsiusInput" placeholder="Enter temperature in Celsius">
+        <button onclick="convertTemperature()">Convert</button><br><br>
+        <div id="result1"></div>
+
+       <h1><b>Temperature Converter from °F  to °C </b></h1>
+       <div id="container">
+        <input type="text" id="fahrenheitInput" placeholder="Enter temperature in Fahrenheit">
+        <button onclick="convertTemperature()">Convert</button><br><br>
+        <div id="result2"></div>
+    
+    <script>
+        function convertTemperature() {
+            var celsius = parseFloat(document.getElementById("celsiusInput").value);
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("result1").innerHTML =  "The given temprature  " + celsius +"°C in Fahrenheit is "+ fahrenheit.toFixed(2) + "°F";
+
+            var fahrenheit = parseFloat(document.getElementById("fahrenheitInput").value);
+            var celcius = (fahrenheit -32)*5/9;
+            document.getElementById("result2").innerHTML =  "The given temprature  " + fahrenheit +"°F  in Celsius is "+ celcius.toFixed(2) + "°C";
+        }
+    </script>
+</body>
+</html>
